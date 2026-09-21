@@ -1,0 +1,14 @@
+/* Selector de etiqueta: aplica estilo a todos los párrafos */
+p {
+    color: green;
+    font-size: 18px;
+}
+/* Selector de clase: cambia el color de algunos elementos de la lista */
+.destacado {
+    color: blue;
+}
+/* Selector de ID: aplica un estilo único al título principal */
+#titulo-principal {
+    color: darkgreen;
+    text-align: center;
+}
