@@ -1,0 +1,252 @@
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    /* CSS Grid principal */
+    display: grid;
+    grid-template-areas:
+        "header"
+        "acerca-de"
+        "como-ayudar"
+        "testimonios"
+        "galeria"
+        "suscripcion"
+        "footer";
+    grid-template-columns: 1fr;
+}
+
+/* Secciones generales */
+header, section, footer {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Encabezado */
+header {
+    grid-area: header;
+    background: linear-gradient(135deg, #0066cc, #003366);
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Flexbox para las secciones */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+/* Acerca de nosotros */
+#acerca-de {
+    grid-area: acerca-de;
+    background-color: white;
+}
+
+#acerca-de h2 {
+    color: #0066cc;
+}
+
+/* Cómo puedes ayudar */
+#como-ayudar {
+    grid-area: como-ayudar;
+    background-color: #eaf3ff;
+}
+
+#como-ayudar h2 {
+    color: #ff6347;
+}
+
+/* Testimonios */
+#testimonios {
+    grid-area: testimonios;
+    background-color: white;
+}
+
+.contenedor-testimonios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.testimonio {
+    background-color: #eaf3ff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.testimonio h3 {
+    color: #0066cc;
+}
+
+/* Galería de imágenes */
+#galeria {
+    grid-area: galeria;
+    background-color: #f0f4ff;
+}
+
+.contenedor-imagenes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.contenedor-imagenes img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Suscripción */
+#suscripcion {
+    grid-area: suscripcion;
+    background-color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button, .boton-movil, .boton-regresar {
+    padding: 12px 20px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover, .boton-movil:hover, .boton-regresar:hover {
+    background-color: #004080;
+}
+
+/* Enlace oculto en desktop */
+.boton-movil {
+    display: none;
+}
+
+/* Pie de página */
+footer {
+    grid-area: footer;
+    background-color: #343a40;
+    color: white;
+    padding: 30px 20px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* Página de suscripción */
+.pagina-suscripcion {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.pagina-suscripcion main {
+    flex: 1;
+}
+
+.formulario-extra {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    header, section, footer {
+        padding: 40px 20px;
+    }
+
+    /* Reducir tamaño del encabezado */
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Testimonios en una columna */
+    .contenedor-testimonios {
+        grid-template-columns: 1fr;
+    }
+
+    /* Imágenes en una columna */
+    .contenedor-imagenes {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ocultar formulario principal */
+    #suscripcion form {
+        display: none;
+    }
+
+    /* Mostrar enlace al formulario */
+    .boton-movil {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    /* Formulario en la página adicional */
+    .formulario-extra {
+        flex-direction: column;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .formulario-extra input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
